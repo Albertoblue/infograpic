@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronRight, BookOpen, Lightbulb, PenTool, BookText } from 'lucide-react';
+import { ChevronRight, BookOpen, Lightbulb, PenTool, BookText, Info } from 'lucide-react';
 
 const ContrastConcessionInfographic = () => {
   const [activeSection, setActiveSection] = useState('intro');
 
+  
   const sections = {
     intro: {
       title: "Understanding Contrast & Concession",
@@ -11,6 +12,12 @@ const ContrastConcessionInfographic = () => {
         <div className="space-y-4">
           <p className="text-lg">When writing in English, we often need to show how ideas are different (contrast) or accept opposing views (concession). Let's learn how!</p>
           <div className="flex flex-wrap gap-4">
+            <button 
+              onClick={() => setActiveSection('theory')} 
+              className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+            >
+              <Info className="w-4 h-4" /> Learn the Theory
+            </button>
             <button 
               onClick={() => setActiveSection('contrast')} 
               className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
@@ -28,6 +35,88 @@ const ContrastConcessionInfographic = () => {
               className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700"
             >
               <BookText className="w-4 h-4" /> View References
+            </button>
+          </div>
+        </div>
+      )
+    },
+    theory: {
+      title: "Introduction to Contrast & Concession",
+      content: (
+        <div className="space-y-6">
+          <div className="bg-green-50 p-6 rounded-lg">
+            <h3 className="font-semibold text-xl mb-4">Why Are They Important?</h3>
+            <p className="mb-4">In academic and professional writing, we often need to:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Compare different ideas or viewpoints</li>
+              <li>Show relationships between opposing concepts</li>
+              <li>Acknowledge contradicting evidence</li>
+              <li>Present balanced arguments</li>
+            </ul>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Contrast</h3>
+              <p>Contrast markers help us show differences between ideas. They're used to:</p>
+              <ul className="list-disc pl-6 mt-2">
+                <li>Compare different viewpoints</li>
+                <li>Highlight differences</li>
+                <li>Present alternatives</li>
+              </ul>
+            </div>
+
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Concession</h3>
+              <p>Concession markers help us acknowledge opposing views. They're used to:</p>
+              <ul className="list-disc pl-6 mt-2">
+                <li>Accept contrary points</li>
+                <li>Show understanding of alternatives</li>
+                <li>Build balanced arguments</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 p-4 rounded-lg">
+            <h3 className="font-semibold mb-2">Key Differences</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full mt-2">
+                <thead>
+                  <tr className="border-b">
+                    <th className="px-4 py-2 text-left">Contrast</th>
+                    <th className="px-4 py-2 text-left">Concession</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="px-4 py-2">Shows differences between ideas</td>
+                    <td className="px-4 py-2">Acknowledges opposing views</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="px-4 py-2">Compares two or more elements</td>
+                    <td className="px-4 py-2">Accepts contrary evidence</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2">Uses markers like "but," "while"</td>
+                    <td className="px-4 py-2">Uses markers like "although," "despite"</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="flex gap-4">
+            <button 
+              onClick={() => setActiveSection('contrast')} 
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+            >
+              <ChevronRight className="w-4 h-4" /> Explore Contrast Markers
+            </button>
+            <button 
+              onClick={() => setActiveSection('concession')} 
+              className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+            >
+              <ChevronRight className="w-4 h-4" /> Explore Concession Markers
             </button>
           </div>
         </div>
