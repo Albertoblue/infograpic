@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, BookOpen, Lightbulb, PenTool, BookText, Info } from 'lucide-react';
-
+import YoutubeVideo from './YoutubeVideo';
 const ContrastConcessionInfographic = () => {
   const [activeSection, setActiveSection] = useState('intro');
 
@@ -283,6 +283,9 @@ const ContrastConcessionInfographic = () => {
         </div>
       </div>
 
+      <div className="w-full max-w-4xl mx-auto my-8 center flex justify-center">
+          <YoutubeVideo />
+        </div>
       <div className="mt-8 p-4 border-t border-gray-200 text-center text-gray-600">
           <p>Elaborado para el entregable 1 de la materia de Comunicación Avanzada en Inglés</p>
           <p className="font-semibold mt-1">Juan Alberto Alcantara Sotelo</p>
